@@ -1,13 +1,9 @@
-var buttonClick = document.getElementById("addElem");
-var adToList = document.getElementById("lista");
+var list = document.getElementById('lista');
+var add = document.getElementById('addElem');
 
-buttonClick.addEventListener("click", addList);
-
-var listNumber = document.getElementsByTagName("li");
-
-
-function addList() {
-	
-	adToList.innerHTML += "<li>item " + listNumber.length +"</li>";
-
-}
+add.addEventListener('click', function() {
+	var element = document.createElement('li');
+	var listNumber = document.getElementsByTagName('li').length;
+	element.innerHTML = 'item ' + listNumber;
+	list.appendChild(element);
+});
